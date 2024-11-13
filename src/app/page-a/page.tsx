@@ -1,4 +1,5 @@
 'use client'
+import TransitionWrapper from '@/components/TransitionWrapper'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { useRef } from 'react'
@@ -15,11 +16,13 @@ const PageA = () => {
 
 	return (
 		<>
-			<div ref={container} className='flex'>
-				<div className='box text-black text-3xl text-center block w-full'>
-					Hello
+			<TransitionWrapper backgroundColor='#ff7eb3'>
+				<div ref={container} className='flex'>
+					<div className='box text-black text-3xl text-center block w-full'>
+						Hello
+					</div>
 				</div>
-			</div>
+			</TransitionWrapper>
 		</>
 	)
 }
