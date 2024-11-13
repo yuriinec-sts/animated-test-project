@@ -9,7 +9,7 @@ const TransitionWrapper = ({
 	backgroundColor: string
 }) => {
 	useEffect(() => {
-		const tl = gsap.timeline({ defaults: { duration: 0.5 } })
+		const tl = gsap.timeline({ defaults: { duration: 1 } })
 
 		tl.fromTo(
 			'.logo-card',
@@ -24,7 +24,7 @@ const TransitionWrapper = ({
 		)
 
 		return () => {
-			const tlExit = gsap.timeline({ defaults: { duration: 0.3 } })
+			const tlExit = gsap.timeline({ defaults: { duration: 1 } })
 			tlExit.to('.logo-card', { scale: 0.1, opacity: 0, stagger: 0 })
 			tlExit.to('body', { backgroundColor: 'initial' }, '<')
 		}

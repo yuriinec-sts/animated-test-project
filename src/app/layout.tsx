@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className='py-10 px-4 mx-auto min-h-screen transition ease-in bg-[#ffb8b1]'>
+			<body className='py-10 mx-auto min-h-[2000px] transition linear'>
 				<Navigation />
 				{children}
 			</body>

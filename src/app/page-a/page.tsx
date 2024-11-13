@@ -1,30 +1,34 @@
+// app/logo-slider/page.tsx
+
 'use client'
 import TransitionWrapper from '@/components/TransitionWrapper'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import { useRef } from 'react'
 
-const PageA = () => {
-	const container = useRef(null)
+import Slider from '@/components/Slider'
+import React from 'react'
+import { TSliderItem } from '@/components/Slider/types'
 
-	useGSAP(
-		() => {
-			gsap.to('.box', { rotation: 180 })
-		},
-		{ scope: container }
-	)
+const logos: TSliderItem[] = [
+	{ src: '/logo1.png', alt: 'Company 1', description: 'Description 1' },
+	{ src: '/logo2.png', alt: 'Company 2', description: 'Description 2' },
+	{ src: '/logo3.png', alt: 'Company 3', description: 'Description 3' },
+	{ src: '/logo4.png', alt: 'Company 4', description: 'Description 4' },
+	{ src: '/logo5.png', alt: 'Company 5', description: 'Description 5' },
+	{ src: '/logo5.png', alt: 'Company 5', description: 'Description 5' },
+	{ src: '/logo5.png', alt: 'Company 5', description: 'Description 5' },
+	{ src: '/logo5.png', alt: 'Company 5', description: 'Description 5' },
+	{ src: '/logo5.png', alt: 'Company 5', description: 'Description 5' },
+	{ src: '/logo5.png', alt: 'Company 5', description: 'Description 5' },
+]
 
+const LogoSliders: React.FC = () => {
 	return (
-		<>
-			<TransitionWrapper backgroundColor='#ff7eb3'>
-				<div ref={container} className='flex'>
-					<div className='box text-black text-3xl text-center block w-full'>
-						Hello
-					</div>
-				</div>
-			</TransitionWrapper>
-		</>
+		<TransitionWrapper backgroundColor='#dfd98f'>
+			<div className='pt-40 flex flex-col gap-4'>
+				<Slider slides={logos} directionAnim={1} />
+				<Slider slides={logos} directionAnim={-1} />
+			</div>
+		</TransitionWrapper>
 	)
 }
 
-export default PageA
+export default LogoSliders
